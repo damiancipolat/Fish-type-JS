@@ -68,7 +68,7 @@ const intercept = (types) => (fn)=>(...args)=>{
   //Validate the function call.
   const valid = validate(args,types);
 
-  if (valid && valid.status=='ok'){
+  if (valid && valid.status=='error'){
 
     //Launch error with message and stack.
     throw new ValidationError('TYPE_CHECK',valid.stack);
