@@ -14,9 +14,9 @@ const print = (name,surname,age,email)=>{
 }
 
 //Create a decorated function with type validation.
-const sumT = intercept(1,2)([types.number,types.number])(sum);
+const sumT = intercept([types.number,types.number])(sum);
 
-console.log(sumT);
+console.log(sumT(1,2));
 
 
 

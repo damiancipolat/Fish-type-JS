@@ -1,9 +1,6 @@
-const {
-	string,
-	number
-} = require('joi');
+const Joi = require('joi');
 
 module.exports = {
-	string : string(),
-	number : number()
+	string : Joi.string(),
+	number : Joi.number()
 }

@@ -47,26 +47,38 @@ const validate = (values,types)=>{
       return (e.error&&e.error.details)?e.error.details:{ok:true};
     });
 
-    //Launch error with message and stack.
-    throw new ValidationError('TYPE_CHECK',stack);
+    return {
+      status:'error',
+      stack
+    }
+
+  } else {
+
+    return {
+      status:'ok'
+    }
 
   }
-
-  return true;
 
 }
 
 //Create a decorated function with type validation.
-const intercept = (...args) => (types) => (fn)=>{
+const intercept = (types) => (fn)=>(...args)=>{
 
-  console.log('--->',args,types,fn);
-  /*
-  args.forEach(e=>{
-    console.log('--->',e);
-  });
+  //Validate the function call.
+  const valid = validate(args,types);
 
-  return fn(...args);
-  */
+  if (valid && valid.status=='ok'){
+
+    //Launch error with message and stack.
+    throw new ValidationError('TYPE_CHECK',valid.stack);
+
+  } else {
+
+    //Call the function with the parameters arguments.
+    return fn(...args);
+
+  }
 
 }
 
