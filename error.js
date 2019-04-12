@@ -1,4 +1,4 @@
-//Validation custom error.
+//Custom validation error.
 class ValidationError{
 
   constructor(type,stack) {
