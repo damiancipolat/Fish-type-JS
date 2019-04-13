@@ -23,7 +23,35 @@ const translator = (key) =>{
 
 }
 
+//Adapt the date type to joi object.
+const convertTypes = (types)=>{
+
+  let tmpTypes = [];
+
+  types.forEach((typeVal)=>{
+
+    //if the value is a string convert to joi.
+    const tmp = (typeof typeVal ==='string') ? translator(typeVal) : typeVal;
+
+    //Add in the buffer.
+    tmpTypes.push(tmp);
+
+  });
+
+  return tmpTypes;
+
+}
+
+//Adapt a single value to a joi object.
+const convertType = (typeVal)=>{
+
+  return (typeof typeVal ==='string') ? translator(typeVal) : typeVal;
+
+}
+
 module.exports = {
   primitives,
-  translator
+  translator,
+  convertTypes,
+  convertType
 };
