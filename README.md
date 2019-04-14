@@ -19,6 +19,14 @@ npm install dyn-check
 #### Library:
 The library export two things, a decorate function that have to be use for decorate a single function and add a automatic call parameters validation, and a list of primitive data types.
 
+**Decorate function format**
+```javascript
+const {decorate,types} = require('../index.js');
+
+//I will get the function output.
+const sumT = decorate([IN],OUT)(sum);
+```
+
 #### Examples:
 Try this basic example of how to use the library.
 
