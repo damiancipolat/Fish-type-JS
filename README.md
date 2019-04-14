@@ -27,12 +27,14 @@ const {decorate,types} = require('../index.js');
 const sumT = decorate([IN],OUT)(sum);
 ```
 **Define input and output:**
+
 You can  specify the types of the parameters that the function receive and the return data of the function.
 ```javascript
 const newFunction = decorate([IN],OUT)(Function);
 ```
 
 #### Examples:
+
 Try this basic example of how to use the library.
 
 ```javascript
@@ -53,3 +55,12 @@ const sumT  = decorate([number,number],number)(sum);
 
 sumT(10,10);
 ```
+
+If you want more, go and download the project and go to /samples folder and chek the examples.
+
+#### TODO:
+This library is a work in progress project, I'm sure that will be very usefull for any JS developer, but there are some things pending to add in the library, but in the next version will apeear.
+
+- Add type validation to simple variables.
+- Improve how to specify the types of the call of a function to something else of the Typescript style.
+- To be able to specify in case there is no matcheo of types to return null or to throw an exception.
