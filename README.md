@@ -8,7 +8,7 @@ Data type validation in function calls on **Runtime** to be used in javascript p
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/damiancipolat/Fish-type-JS/blob/master/LICENSE)
 
-[![version](https://img.shields.io/badge/fish--type--js-version%20%3E%3D1.0.0-green.svg)]
+[![version](https://img.shields.io/badge/fish--type--js-version%20%3E%3D1.0.0-green.svg)](https://github.com/damiancipolat/Fish-type-JShttps://github.com/damiancipolat/Fish-type-JS)
 
 ## Objective:
 Every JS programmer knows how annoying it is to work with static validators of data types. That's why I created this library, to help us and make sure that our function is always executed only with the types of data that we define for it.
