@@ -1,4 +1,5 @@
 # Fish-type JS
+![N|Solid](https://github.com/damiancipolat/JS-Dynamic-type-validation/blob/master/doc/fish_2.png?raw=true)
 
 Data type validation in function calls on **Runtime** to be used in javascript projects.
 
