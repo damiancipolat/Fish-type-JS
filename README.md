@@ -10,7 +10,7 @@ This library uses joi to handle the type validations, you can use custom primiti
 
 ## Usage:
 
-- **Install:**
+### Install:
 
 Run this command to install the library from npm.
 ```sh
