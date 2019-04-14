@@ -9,6 +9,8 @@ Data type validation in function calls on **Runtime** to be used in javascript p
 [![version](https://img.shields.io/badge/version-%3E%3D%201.0.0-green.svg)](https://github.com/damiancipolat/Fish-type-JShttps://github.com/damiancipolat/Fish-type-JS)
 [![build](https://travis-ci.com/damiancipolat/Fish-type-JS.svg?branch=master)](https://travis-ci.com/damiancipolat/Fish-type-JS)
 
+<a href="https://www.npmjs.com/package/fish-type-js"><img src="https://nodei.co/npm/fish-type-js.png?downloads=true"></a>
+
 ## Objective:
 Every JS programmer knows how annoying it is to work with static validators of data types. That's why I created this library, to help us and make sure that our function is always executed only with the types of data that we define for it.
 
@@ -18,8 +20,6 @@ This library uses joi https://github.com/hapijs/joi to handle the type validatio
 ## Usage:
 
 #### Install:
-
-<a href="https://www.npmjs.com/package/fish-type-js"><img src="https://nodei.co/npm/fish-type-js.png?downloads=true"></a>
 
 Run this command to install the library from npm.
 ```sh
