@@ -1,6 +1,6 @@
 <a href="http://hapijs.com"><img src="https://github.com/damiancipolat/JS-Dynamic-type-validation/blob/master/doc/fish_2.png?raw=true" width="180px" align="right" /></a>
 
-# Fish-type JS
+# Fish type JS
 
 Data type validation in function calls on **Runtime** to be used in javascript projects.
 
