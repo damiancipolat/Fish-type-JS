@@ -16,3 +16,21 @@ Run this command to install the library from npm.
 ```sh
 npm install dyn-check
 ```
+
+#### Examples:
+
+Try this basic example of how to use the library.
+```javascript
+//Include lib and types.
+const {decorate,types} = require('../index.js');
+
+//Basic function.
+const sum = (a,b)=>{
+  return a+b;
+}
+
+//Decorate the function.
+const sumT  = decorate([number,number],number)(sum);
+
+sumT(10,10);
+```
