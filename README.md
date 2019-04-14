@@ -16,10 +16,12 @@ Run this command to install the library from npm.
 ```sh
 npm install dyn-check
 ```
+#### Library:
+The library export two things, a decorate function that have to be use for decorate a single function and add a automatic call parameters validation, and a list of primitive data types.
 
 #### Examples:
-
 Try this basic example of how to use the library.
+
 ```javascript
 //Include lib and types.
 const {decorate,types} = require('../index.js');
