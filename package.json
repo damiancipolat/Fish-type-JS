@@ -1,13 +1,13 @@
 {
-  "name": "dyntypecheck",
+  "name": "fish-type-js",
   "version": "1.0.0",
-  "description": "",
+  "description": "Runtime dynamic type validation in function calls.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Damian Cipolat",
+  "license": "MIT",
   "dependencies": {
     "joi": "^14.3.1"
   }
