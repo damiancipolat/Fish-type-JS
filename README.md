@@ -38,8 +38,38 @@ const sumT = decorate([IN],OUT)(sum);
 **Define input and output:**
 
 You can  specify the types of the parameters that the function receive and the return data of the function.
+
 ```javascript
 const newFunction = decorate([IN],OUT)(Function);
+```
+**Type parameters**:
+You can use the primitives types, that are exposed in the library.
+
+```javascript
+const {types} = require('fish-type-js');
+
+//Include primitives types.
+const {
+  number, 
+  string,
+  bool
+} = types;
+
+```
+
+Or create more complex object schema and mix the function call with a joi schema validation.
+
+
+```javascript
+const {types} = require('fish-type-js');
+
+//Include primitives types.
+const {
+  number, 
+  string,
+  bool
+} = types;
+
 ```
 
 #### Examples:
