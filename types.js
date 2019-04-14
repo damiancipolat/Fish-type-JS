@@ -12,8 +12,8 @@ const primitives = {
   object : Joi.object()
 }
 
-//String to object translator.
-const translator = (key) =>{
+//Receive a string and get the current joi object.
+const translate = (key) =>{
 
   //Convert to lowercase.
   key = key.toLowerCase();
@@ -23,35 +23,27 @@ const translator = (key) =>{
 
 }
 
-//Adapt the date type to joi object.
-const convertTypes = (types)=>{
+//Adapt a single value to a joi object.
+const convertOne = (typeVal)=>{
 
-  let tmpTypes = [];
-
-  types.forEach((typeVal)=>{
-
-    //if the value is a string convert to joi.
-    const tmp = (typeof typeVal ==='string') ? translator(typeVal) : typeVal;
-
-    //Add in the buffer.
-    tmpTypes.push(tmp);
-
-  });
-
-  return tmpTypes;
+  return (typeof typeVal ==='string') ? translate(typeVal) : typeVal;
 
 }
 
-//Adapt a single value to a joi object.
-const convertType = (typeVal)=>{
+//Adapt the date type to joi object.
+const convertMultiple = (types)=>{
 
-  return (typeof typeVal ==='string') ? translator(typeVal) : typeVal;
+  if ((types)&&(types.length)){
+    return types.map((typeVal) => convertOne(typeVal));  
+  } else {
+    return types;
+  }  
 
 }
 
 module.exports = {
   primitives,
-  translator,
-  convertTypes,
-  convertType
+  translate,
+  convertMultiple,
+  convertOne
 };

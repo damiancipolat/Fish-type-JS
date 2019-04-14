@@ -6,8 +6,8 @@ const {ValidationError} = require('./error.js');
 //Include basic joi types.
 const {
   primitives,
-  convertType,
-  convertTypes
+  convertMultiple,
+  convertOne
 } = require('./types.js');
 
 //Include custom validator.
@@ -17,11 +17,13 @@ const {
 } = require('./validate.js');
 
 //Create a decorated function with type validation.
-const intercept = (types,out) => (fn)=>(...args)=>{
+const decorate = (types,out) => (fn)=>(...args)=>{
 
-  //Adapt and prepare the types.
-  types = convertTypes(types);
-  out   = convertType(out);
+  //Convert the parameters list.
+  types = convertMultiple(types);
+
+  //Convert the ouput.
+  out = convertOne(out);
 
   //Validate the function call.
   const valid = complete(args,types);
@@ -47,6 +49,6 @@ const intercept = (types,out) => (fn)=>(...args)=>{
 }
 
 module.exports = {
-  intercept,
-  typeData : primitives
+  decorate,
+  types : primitives
 }

@@ -2,7 +2,7 @@
 const Joi = require('joi');
 
 //Get array of validations-
-const make = (values,types)=>{
+const validateArrays = (values,types)=>{
 
   //Get an array of results.
   return values.map((val,i)=>{
@@ -18,7 +18,7 @@ const make = (values,types)=>{
 }
 
 //Check validations results.
-const check = (validList)=>{
+const isArrayOk = (validList)=>{
 
   //Find if all the fields fail.
   return ((validList.filter(valid => valid.error===null).length) === validList.length);
@@ -29,10 +29,10 @@ const check = (validList)=>{
 const complete = (values,types)=>{
 
   //Get a list of data validations.
-  const validations = make(values,types);
+  const validations = validateArrays(values,types);
 
   //Check all the fields and return an array of joi validations.
-  const valid = check(validations);
+  const valid = isArrayOk(validations);
 
   //If Fail some validation.
   if (!valid){
