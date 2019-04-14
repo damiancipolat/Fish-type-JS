@@ -6,11 +6,6 @@ Data type validation in function calls on **Runtime** to be used in javascript p
 
 [![Build Status](https://travis-ci.org/hapijs/joi.svg?branch=master)](https://travis-ci.org/hapijs/joi)
 
-# Fish-type JS
-![N|Solid](https://github.com/damiancipolat/JS-Dynamic-type-validation/blob/master/doc/fish_2.png?raw=true)
-
-Data type validation in function calls on **Runtime** to be used in javascript projects.
-
 ## Objective:
 Every JS programmer knows how annoying it is to work with static validators of data types. That's why I created this library, to help us and make sure that our function is always executed only with the types of data that we define for it.
 
