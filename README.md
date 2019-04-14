@@ -5,13 +5,9 @@
 Data type validation in function calls on **Runtime** to be used in javascript projects.
 
 [![dependencies Status](https://david-dm.org/damiancipolat/Fish-type-JS.svg)](https://david-dm.org/damiancipolat/Fish-type-JS)
-
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/damiancipolat/Fish-type-JS/blob/master/LICENSE)
-
 [![version](https://img.shields.io/badge/version-%3E%3D%201.0.0-green.svg)](https://github.com/damiancipolat/Fish-type-JShttps://github.com/damiancipolat/Fish-type-JS)
-
 [![build](https://travis-ci.com/damiancipolat/Fish-type-JS.svg?branch=master)](https://travis-ci.com/damiancipolat/Fish-type-JS)
-
 
 ## Objective:
 Every JS programmer knows how annoying it is to work with static validators of data types. That's why I created this library, to help us and make sure that our function is always executed only with the types of data that we define for it.
