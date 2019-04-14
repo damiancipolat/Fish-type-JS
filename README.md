@@ -1,3 +1,11 @@
+<a href="http://hapijs.com"><img src="https://github.com/damiancipolat/JS-Dynamic-type-validation/blob/master/doc/fish_2.png?raw=true" width="180px" align="right" /></a>
+
+# Fish-type JS
+
+Data type validation in function calls on **Runtime** to be used in javascript projects.
+
+[![Build Status](https://travis-ci.org/hapijs/joi.svg?branch=master)](https://travis-ci.org/hapijs/joi)
+
 # Fish-type JS
 ![N|Solid](https://github.com/damiancipolat/JS-Dynamic-type-validation/blob/master/doc/fish_2.png?raw=true)
 
