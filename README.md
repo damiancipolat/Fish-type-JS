@@ -1,4 +1,4 @@
-<a href="http://hapijs.com"><img src="https://github.com/damiancipolat/JS-Dynamic-type-validation/blob/master/doc/fish_2.png?raw=true" width="180px" align="right" /></a>
+<img src="https://github.com/damiancipolat/JS-Dynamic-type-validation/blob/master/doc/fish_2.png?raw=true" width="180px" align="right" />
 
 # Fish type JS
 
@@ -23,7 +23,7 @@ The library export two things, a decorate function that have to be use for decor
 
 **Decorate function - format**
 ```javascript
-const {decorate,types} = require('../index.js');
+const {decorate,types} = require('fish-type-js');
 
 //I will get the function output.
 const sumT = decorate([IN],OUT)(sum);
