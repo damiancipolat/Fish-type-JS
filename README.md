@@ -58,7 +58,7 @@ sumT(10,10);
 
 If you want more, go and download the project and go to /samples folder and chek the examples.
 
-#### TODO:
+## TODO:
 This library is a work in progress project, I'm sure that will be very usefull for any JS developer, but there are some things pending to add in the library, but in the next version will apeear.
 
 - Add type validation to simple variables.
