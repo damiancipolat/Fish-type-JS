@@ -24,6 +24,10 @@ Try this basic example of how to use the library.
 //Include lib and types.
 const {decorate,types} = require('../index.js');
 
+const {
+  number
+} = types;
+
 //Basic function.
 const sum = (a,b)=>{
   return a+b;
