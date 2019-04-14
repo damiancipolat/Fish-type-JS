@@ -4,6 +4,8 @@
 
 Data type validation in function calls on **Runtime** to be used in javascript projects.
 
+[![dependencies Status](https://david-dm.org/damiancipolat/Fish-type-JS.svg)](https://david-dm.org/damiancipolat/Fish-type-JS)
+
 ## Objective:
 Every JS programmer knows how annoying it is to work with static validators of data types. That's why I created this library, to help us and make sure that our function is always executed only with the types of data that we define for it.
 
