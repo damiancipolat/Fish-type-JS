@@ -1,6 +1,6 @@
 {
   "name": "fish-type-js",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Runtime dynamic type validation in function calls.",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,13 @@
     "type": "git",
     "url" : "https://github.com/damiancipolat/Fish-type-JS"
   },
+  "keywords":[
+    "type",
+    "functions",
+    "joi",
+    "schema",
+    "type check"
+  ],
   "dependencies": {
     "joi": "^14.3.1"
   }
