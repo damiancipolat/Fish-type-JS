@@ -43,9 +43,8 @@ You can  specify the types of the parameters that the function receive and the r
 const newFunction = decorate([IN],OUT,allowUnkwnow)(Function);
 
 ```
-**IN**:  string or Joi type schema.
-**OUT**: string or Joi type schema.
-**allowUnknow**: boolean.
+
+**IN**:  string or Joi type schema / **OUT**: string or Joi type schema / **allowUnknow**: boolean
 
 
 **Type parameters**:
