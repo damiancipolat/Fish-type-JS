@@ -40,8 +40,14 @@ const sumT = decorate([IN],OUT)(sum);
 You can  specify the types of the parameters that the function receive and the return data of the function.
 
 ```javascript
-const newFunction = decorate([IN],OUT)(Function);
+const newFunction = decorate([IN],OUT,allowUnkwnow)(Function);
+
 ```
+**IN**:  string or Joi type schema.
+**OUT**: string or Joi type schema.
+**allowUnknow**: boolean, flag used when are using custom schemas.
+
+
 **Type parameters**:
 You can use the primitives types, that are exposed in the library.
 
@@ -78,7 +84,8 @@ findGeoT({lat:1.111,lng:3.01});
 
 **Allow unknow:**
 
-You can configure the library to allow unknow properties when you are using a custom schema.
+You can configure the library to allow unknow properties when you are using a custom schema, adding true 
+at the las parameter of decorate.
 
 ```javascript
 const findGeoT  = decorate([pointType],null,true)(findGeo);
