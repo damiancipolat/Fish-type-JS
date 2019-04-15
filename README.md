@@ -78,7 +78,7 @@ findGeoT({lat:1.111,lng:3.01});
 
 **Allow unknow:**
 
-You can configure the librarty to allow unknow propertys un a custom schema.
+You can configure the library to allow unknow properties when you are using a custom schema.
 
 ```javascript
 const findGeoT  = decorate([pointType],null,true)(findGeo);
