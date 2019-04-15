@@ -2,13 +2,15 @@
 const Joi = require('joi');
 
 //Get array of validations-
-const validateArrays = (values,types)=>{
+const validateArrays = (values,types,allowUnknow)=>{
 
   //Get an array of results.
   return values.map((val,i)=>{
 
     //Create a custom schema with only a prop.
-    const schema = Joi.object().keys({prop:types[i]});
+    const schema = (allowUnknow===true)
+      ? Joi.object().keys({prop:types[i]}).unknown(true)
+      : Joi.object().keys({prop:types[i]});
 
     //Return the validation.
     return Joi.validate({prop:val}, schema);
@@ -26,10 +28,10 @@ const isArrayOk = (validList)=>{
 }
 
 //Validate the array of values with the array of types.
-const complete = (values,types)=>{
+const complete = (values,types,allowUnknow)=>{
 
   //Get a list of data validations.
-  const validations = validateArrays(values,types);
+  const validations = validateArrays(values,types,allowUnknow);
 
   //Check all the fields and return an array of joi validations.
   const valid = isArrayOk(validations);
@@ -39,7 +41,7 @@ const complete = (values,types)=>{
 
     //Collect the validations errors in the stack.
     const stack = validations.map(e => {
-      return (e.error&&e.error.details)?e.error.details:{ok:true};
+      return (e.error&&e.error.details) ? e.error.details : {ok:true};
     });
 
     return {
@@ -58,10 +60,12 @@ const complete = (values,types)=>{
 }
 
 //Validate a single output.
-const single = (type,value)=>{
+const single = (type,value,allowUnknow)=>{
 
   //Create a custom schema with only a prop.
-  const schema = Joi.object().keys({prop:type});
+  const schema = (allowUnknow===true)
+    ? Joi.object().keys({prop:type}).unknown(true)
+    : Joi.object().keys({prop:type});
 
   //Return the validation.
   return (Joi.validate({prop:value}, schema).error ===null);

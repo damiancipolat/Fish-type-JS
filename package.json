@@ -1,6 +1,6 @@
 {
   "name": "fish-type-js",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Runtime dynamic type validation in function calls.",
   "main": "index.js",
   "scripts": {

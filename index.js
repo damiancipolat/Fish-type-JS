@@ -17,7 +17,7 @@ const {
 } = require('./validate.js');
 
 //Create a decorated function with type validation.
-const decorate = (types,out) => (fn)=>(...args)=>{
+const decorate = (types,out,allowUnknow) => (fn)=>(...args)=>{
 
   //Convert the parameters list.
   types = convertMultiple(types);
@@ -26,7 +26,7 @@ const decorate = (types,out) => (fn)=>(...args)=>{
   out = convertOne(out);
 
   //Validate the function call.
-  const valid = complete(args,types);
+  const valid = complete(args,types,allowUnknow);
 
   if (valid && valid.status=='error'){
 
@@ -39,7 +39,7 @@ const decorate = (types,out) => (fn)=>(...args)=>{
     const result = fn(...args);
     
     //If the output type is defined.
-    if ((out)&&(!single(out,result)))
+    if ((out)&&(!single(out,result,allowUnknow)))
       throw new ValidationError('TYPE_CHECK_OUTPUT',out);
     
     return result;
