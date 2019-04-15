@@ -44,7 +44,9 @@ const newFunction = decorate([IN],OUT,allowUnkwnow)(Function);
 
 ```
 **IN**:  string or Joi type schema.
+
 **OUT**: string or Joi type schema.
+
 **allowUnknow**: boolean, flag used when are using custom schemas.
 
 
