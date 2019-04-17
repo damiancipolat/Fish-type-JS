@@ -59,6 +59,12 @@ function typedef(struct) {
     }
 }
 
+function validate(return_type, args_array) {
+    return function (func) {
+        
+    }
+} 
+
 export default {
     decorate,
     types: primitives,
