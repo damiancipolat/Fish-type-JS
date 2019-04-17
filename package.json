@@ -2,7 +2,7 @@
   "name": "fish-type-js",
   "version": "1.0.11",
   "description": "Runtime dynamic type validation in function calls.",
-  "main": "index.js",
+  "main": "index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
