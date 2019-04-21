@@ -1,12 +1,5 @@
 //Include validator.
-const {decorate,types} = require('../index.js');
-
-//Include primitives types.
-const {
-  number, 
-  string,
-  bool
-} = types;
+const {decorate} = require('../index.js');
 
 //Sum function.
 const sum = (a,b)=>{
@@ -55,29 +48,26 @@ const profile = (name,surname,age,single)=>{
 //Create decorated functions with dinamyc type validation.
 
 //Using data types.
-
-const sumT  = decorate([number,number],number)(sum);
-const difT  = decorate([number,number],number)(dif);
-const multT = decorate([number,number],number)(mult);
+const sumT  = decorate({a:'number',b:'number'},'number')(sum);
+const difT  = decorate({a:'number',b:'number'},'number')(dif);
+const multT = decorate({a:'number',b:'number'},'number')(mult);
 
 //Using single string types.
-
-const netSalaryT  = decorate(['number'],'number')(netSalary);
-const calcIvaT    = decorate(['number'],'number')(calcIva);
-const nicknameT   = decorate(['string','string'],'string')(nickname);
-const profileT    = decorate(['string','string','number','bool'])(profile); 
+const netSalaryT  = decorate({value:'number'},'number')(netSalary);
+const calcIvaT    = decorate({value:'number'},'number')(calcIva);
+const nicknameT   = decorate({name:'string',surname:'string'},'string')(nickname);
+const profileT    = decorate({name:'string',surname:'string',age:'number',single:'bool'})(profile);
 
 //Test functions call.
-sumT(10,10);
-difT(10,100);
-multT(10,2);
-netSalaryT(50000);
-calcIvaT(2000);
-nicknameT('Damian','Cipolat');
-profileT('Damian','Cipolat',31,true);
+console.log('sumT',sumT(10,10));
+console.log('difT',difT(10,100));
+console.log('multT',multT(10,2));
+console.log('netSalaryT',netSalaryT(50000));
+console.log('calcIvaT',calcIvaT(2000));
+console.log('nicknameT',nicknameT('Damian','Cipolat'));
+console.log('profileT',profileT('Damian','Cipolat',31,true));
 
 //Test functions with bad parameters call.
-
 try{
   multT(10,'Ff');
 } catch(err){
