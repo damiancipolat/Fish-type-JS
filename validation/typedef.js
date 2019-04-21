@@ -49,9 +49,7 @@ const typedef = (struct)=>{
       //If the type validation fail.
       if (!valid)
         throw TypeError(key);
-
-      //console.log('T','key',key,'type',struct[key],'value',value);
-
+      
     });
 
     return true;
@@ -61,13 +59,3 @@ const typedef = (struct)=>{
 }
 
 module.exports = {typedef};
-
-/*
-undefined
-string
-null
-boolean
-number
-object
-promise
-*/
