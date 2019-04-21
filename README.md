@@ -11,6 +11,12 @@ Data type validation in function calls on **Runtime** to be used in javascript p
 
 <a href="https://www.npmjs.com/package/fish-type-js"><img src="https://nodei.co/npm/fish-type-js.png?downloads=true"></a>
 
+**We have the new version 1.1.0 ready!**
+
+In this version:
+- Improve input function type semantic.
+- Add typedef validation module.
+
 ## Objective:
 Every JS programmer knows how annoying it is to work with static validators of data types. That's why I created this library, to help us and make sure that our function is always executed only with the types of data that we define for it.
 
@@ -33,74 +39,55 @@ The library export two things, a decorate function that have to be use for decor
 const {decorate,types} = require('fish-type-js');
 
 //I will get the function output.
-const sumT = decorate([IN],OUT)(sum);
+const sumT = decorate({input},output)(sum);
 ```
 **Define input and output:**
 
 You can  specify the types of the parameters that the function receive and the return data of the function.
 
 ```javascript
-const newFunction = decorate([IN],OUT,allowUnkwnow)(Function);
+const newFunction = decorate({input},output)(Function);
 
 ```
 
-**IN**:  string or Joi type schema / **OUT**: string or Joi type schema / **allowUnknow**: boolean
+**IN**:  paramters structure / **OUT**: type function return
 
 
 **Type parameters**:
-You can use the primitives types, that are exposed in the library.
+You can use this type paramters in each parameter key.
 
-```javascript
-const {types} = require('fish-type-js');
-
-//Include primitives types.
-const {
-  number, 
-  string,
-  bool
-} = types;
-
-```
+* undefined
+* string
+* null
+* boolean
+* number
+* object
+* promise
 
 Or create more complex object schema and mix the function call with a joi schema validation, is important
 to remember include JOI module to use his data types schema.
 
 ```javascript
-const {types} = require('fish-type-js');
-const Joi 	  = require('joi');
+const Joi = require('joi');
 
 //Include primitives types.
-const pointType = {
+const pointType =  Joi.object().keys({
   lat: Joi.number(),
   lng: Joi.number()
-};
+});
 
-const findGeoT  = decorate([pointType])(findGeo);
+const findGeoT  = decorate({lat:'number',lng:'number'})(findGeo);
 
 findGeoT({lat:1.111,lng:3.01});
 
 ```
-
-**Allow unknow:**
-
-You can configure the library to allow unknow properties when you are using a custom schema, adding true 
-at the las parameter of decorate.
-
-```javascript
-const findGeoT  = decorate([pointType],null,true)(findGeo);
-```
-
 #### Examples:
 
 Try this basic example of how to use the library.
 
 ```javascript
 //Include lib and types.
-const {decorate,types} = require('fish-type-js');
-
-const {
-  number
-} = types;
+const {decorate} = require('fish-type-js');
 
 //Basic function.
 const sum = (a,b)=>{
@@ -108,16 +95,13 @@ const sum = (a,b)=>{
 }
 
 //Decorate the function.
-const sumT  = decorate([number,number],number)(sum);
+const sumT  = decorate({a:'number',b:'number'},'number')(sum);
 
 sumT(10,10);
+
 ```
 
 If you want more examples, go and download the project and go to /samples folder and chek the examples.
 
-## TODO:
-This library is a work in progress project, I'm sure that will be very usefull for any JS developer, but there are some things pending to add in the library, but in the next version will apeear.
-
-- Add type validation to simple variables.
-- Improve how to specify the types of the call of a function to something else of the Typescript style.
-- To be able to specify in case there is no matcheo of types to return null or to throw an exception.
+## Note:
+This library is a work in progress project, I'm sure that will be very usefull for any JS developer, but take care that could be changes in the next versions. **We are working in create our custom structure validation engine to avoid use JOI*.
