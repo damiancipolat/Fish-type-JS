@@ -36,7 +36,7 @@ The library export two things, a decorate function that have to be use for decor
 
 **Decorate function - format**
 ```javascript
-const {decorate,types} = require('fish-type-js');
+const {decorate} = require('fish-type-js');
 
 //I will get the function output.
 const sumT = decorate({input},output)(sum);
@@ -54,7 +54,7 @@ const newFunction = decorate({input},output)(Function);
 
 
 **Type parameters**:
-You can use this type paramters in each parameter key.
+You can use this type parameters in each parameter key.
 
 * undefined
 * string
