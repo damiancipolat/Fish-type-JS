@@ -1,54 +1,50 @@
-const Joi = require('joi');
-
-//Include custom error module.
-const {ValidationError} = require('./error.js');
-
-//Include basic joi types.
+//Get process steps.
 const {
-  primitives,
-  convertMultiple,
-  convertOne
-} = require('./types.js');
+  typeLength,
+  match,
+  execFn,
+  parameters,
+  output
+} = require('./steps');
 
-//Include custom validator.
-const {
-  complete,
-  single
-} = require('./validate.js');
+//Middleware process function.
+const {processate} = require('./process.js');
 
-//Create a decorated function with type validation.
-const decorate = (types,out,allowUnknow) => (fn)=>(...args)=>{
+/*
+  Decorate internal steps
 
-  //Convert the parameters list.
-  types = convertMultiple(types);
+  1) validate types length with parameters length
+  2) match structure types with parameters structure and get the param+value struct.
+  3) validate both structure using new typedefs.
+  4) Call function 
+  5) If there are a function type return defined, validate and if the type is ok return it.
 
-  //Convert the ouput.
-  out = convertOne(out);
+*/
 
-  //Validate the function call.
-  const valid = complete(args,types,allowUnknow);
+const decorate = (types,out) => (fn)=>(...args)=>{
 
-  if (valid && valid.status=='error'){
+  //Functions data to be processed in the steps.
+  let base = {
+    types,
+    out,
+    fn,
+    args,
+    result : null
+  };
 
-    //Launch error with message and stack.
-    throw new ValidationError('TYPE_CHECK_PARAMS',valid.stack);
+  //Processate the steps and return the stack.
+  const fnStack = processate(base,[
+    typeLength,
+    match,
+    parameters,
+    execFn,
+    output
+  ]);
 
-  } else {
-
-    //Call the function send the args.
-    const result = fn(...args);
-    
-    //If the output type is defined.
-    if ((out)&&(!single(out,result,allowUnknow)))
-      throw new ValidationError('TYPE_CHECK_OUTPUT',out);
-    
-    return result;
-
-  }
+  return fnStack;
 
 }
 
 module.exports = {
-  decorate,
-  types : primitives
+  decorate
 }

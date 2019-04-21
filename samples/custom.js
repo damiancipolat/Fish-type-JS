@@ -5,17 +5,17 @@ const {decorate} = require('../index.js');
 const Joi = require('joi');
 
 //Custom user type.
-const userType = {
+const userType =  Joi.object().keys({
   username: Joi.string().alphanum().min(3).max(30).required(),
   birthyear: Joi.number().integer().min(1900).max(2013),
   email: Joi.string().email({ minDomainAtoms: 2 })
-};
+});
 
 //Custom geographic point.
-const pointType = {
+const pointType = Joi.object().keys({
   lat: Joi.number(),
   lng: Joi.number()
-};
+});
 
 //Functions to decorate strict types.
 
@@ -36,11 +36,11 @@ const findGeo = (point)=>{
 }
 
 //Decorate
-const newUserT  = decorate([userType],'string')(newUser);
-const findGeoT  = decorate([pointType])(findGeo);
+const newUserT  = decorate({user:userType})(newUser);
+const findGeoT  = decorate({point:pointType})(findGeo);
 
 //Test with correct call.
-newUserT({username: 'damcipolat',birthyear: 1987,email: 'damian.cipolat@gmail.com'});
+console.log(newUserT({username: 'damcipolat',birthyear: 1987,email: 'damian.cipolat@gmail.com'}));
 
 //Find by point.
 console.log(findGeo({lat:111,lng:33}));
