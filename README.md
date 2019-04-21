@@ -76,7 +76,7 @@ const pointType =  Joi.object().keys({
   lng: Joi.number()
 });
 
-const findGeoT  = decorate({lat:'number',lng:'number'})(findGeo);
+const findGeoT  = decorate({point:pointType})(findGeo);
 
 findGeoT({lat:1.111,lng:3.01});
 
