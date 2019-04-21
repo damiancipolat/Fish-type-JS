@@ -7,7 +7,7 @@ const {version} = package;
 console.log('o               ');
 console.log('  o ___/|__     ');
 console.log('o _/       \\  /|');
-console.log(' /  @ \\\    \\/ |');
+console.log(' /  @ \\\     \\/ |');
 console.log(' \\_   //    /\\ |');
 console.log('   \\_______/  \\|');
 console.log('                ');
