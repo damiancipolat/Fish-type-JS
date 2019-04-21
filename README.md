@@ -104,4 +104,4 @@ sumT(10,10);
 If you want more examples, go and download the project and go to /samples folder and chek the examples.
 
 ## Note:
-This library is a work in progress project, I'm sure that will be very usefull for any JS developer, but take care that could be changes in the next versions. **We are working in create our custom structure validation engine to avoid use JOI*.
+This library is a work in progress project, I'm sure that will be very usefull for any JS developer, but take care that could be changes in the next versions. **We are working in create our custom structure validation engine to avoid use JOI**.
