@@ -41,29 +41,8 @@ const decorate = (types, out, allowUnknow) => (fn) => (...args) => {
 
 }
 
-function type_of(value) {
-    return Object.prototype.toString.call(value).split("]")[0].split(" ")[1].toLowerCase();
-}
 
-function typedef(struct) {
-    return function validate(object) {
-        Object.entries(object).forEach(function ([key, value]) {
-            const validator = struct[key];
-            const primitive = type_of(value) !== "object" && value instanceof validator;
-            const complex = validator(value);
-            if (!primitive || !complex) {
-                throw TypeError(key);
-            }
-        });
-        return true; // Successful validation
-    }
-}
 
-function validate(return_type, args_array) {
-    return function (func) {
-        
-    }
-} 
 
 export default {
     decorate,
