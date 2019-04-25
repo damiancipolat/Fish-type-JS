@@ -1,4 +1,4 @@
-import type_of from "./type_of.mjs";
+const type_of = require("./type_of.js");
 
 function abs(number) {
     return (
@@ -80,7 +80,7 @@ function array(value) {
     }
  }
 
-export default {
+module.exports = {
     any,
     string,
     boolean,

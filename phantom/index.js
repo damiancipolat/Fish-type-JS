@@ -1,5 +1,5 @@
-import types from "./types.mjs";
-import type_of from "./type_of.mjs";
+const types = require("./types.js");
+const type_of = require("./type_of.js");
 
 const { any } = types;
 
@@ -37,7 +37,7 @@ function validate(return_type = any, args_array) {
     };
 }
 
-export default {
+module.exports = {
     typedef,
     validate,
     types
