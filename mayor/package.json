@@ -1,0 +1,25 @@
+{
+  "name": "fish-type-js",
+  "version": "2.0.0",
+  "description": "Runtime dynamic type validation in function calls.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node welcome.js"
+  },
+  "author": "Damian Cipolat",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/damiancipolat/Fish-type-JS"
+  },
+  "keywords": [
+    "type",
+    "functions",
+    "joi",
+    "schema",
+    "type check"
+  ],
+  "dependencies": {
+  }
+}
